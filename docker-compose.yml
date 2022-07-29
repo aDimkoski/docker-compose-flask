@@ -11,7 +11,11 @@ services:
       - nginx
 
   redis:
-    image: redis:buster
+    build:
+      context: ./redis/
+    restart: always
+    ports:
+      - 6379:6379
 
   nginx:
     restart: always
